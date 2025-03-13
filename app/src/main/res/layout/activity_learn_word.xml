@@ -14,6 +14,7 @@
         android:src="@drawable/ic_close"
         android:layout_marginTop="24dp"
         android:layout_marginStart="24dp"
+        android:contentDescription="close button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,6 +27,7 @@
         android:layout_marginTop="96dp"
         android:text="Galaxy"
         android:textSize="50sp"
+        android:fontFamily="@font/nunito_bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton"
@@ -62,6 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:fontFamily="@font/rubik_regular"
                 android:text="Сломать" />
         </LinearLayout>
 
@@ -79,7 +82,7 @@
                 android:layout_marginStart="16dp"
                 android:background="@drawable/shape_round_elements"
                 android:gravity="center"
-                android:text="1"
+                android:text="2"
                 android:textColor="#888992"
                 android:textSize="16sp" />
 
@@ -87,6 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:fontFamily="@font/rubik_regular"
                 android:text="Сон" />
         </LinearLayout>
 
@@ -104,7 +108,7 @@
                 android:layout_marginStart="16dp"
                 android:background="@drawable/shape_round_elements"
                 android:gravity="center"
-                android:text="1"
+                android:text="3"
                 android:textColor="#888992"
                 android:textSize="16sp" />
 
@@ -112,6 +116,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:fontFamily="@font/rubik_regular"
                 android:text="Галактика" />
         </LinearLayout>
 
@@ -129,7 +134,7 @@
                 android:layout_marginStart="16dp"
                 android:background="@drawable/shape_round_elements"
                 android:gravity="center"
-                android:text="1"
+                android:text="4"
                 android:textColor="#888992"
                 android:textSize="16sp" />
 
@@ -137,6 +142,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:fontFamily="@font/rubik_regular"
                 android:text="Утюг" />
         </LinearLayout>
 
@@ -146,7 +152,7 @@
         android:layout_width="310dp"
         android:layout_height="58dp"
         android:backgroundTint="#2574FF"
-        android:text="SKIP"
+        android:text="@string/button_skip"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -168,6 +174,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
             android:src="@drawable/ic_correct"
+            android:contentDescription="success image"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -178,10 +185,11 @@
             android:layout_marginStart="8dp"
             android:textColor="@color/white"
             android:textSize="22sp"
+            android:fontFamily="@font/rubik_regular"
             app:layout_constraintBottom_toBottomOf="@+id/imageView"
             app:layout_constraintStart_toEndOf="@+id/imageView"
             app:layout_constraintTop_toTopOf="@+id/imageView"
-            tools:text="Correct!" />
+            android:text="@string/title_correct" />
 
         <android.widget.Button
             android:layout_width="match_parent"
@@ -190,7 +198,8 @@
             android:layout_marginTop="24dp"
             android:backgroundTint="@color/white"
             android:background="@drawable/shape_button_footer"
-            android:text="CONTINUE"
+            android:fontFamily="@font/nunito_bold"
+            android:text="@string/button_continue"
             android:textColor="#0EAD69"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
