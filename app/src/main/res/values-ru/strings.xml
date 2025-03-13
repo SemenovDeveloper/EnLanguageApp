@@ -1,5 +1,5 @@
 <resources>
-    <string name="button_skip">пропустить</string>
+    <string name="button_skip">ПРОПУСТИТЬ</string>
     <string name="title_correct">Верно!</string>
     <string name="button_continue">ПРОДОЛЖИТЬ</string>
 </resources>
