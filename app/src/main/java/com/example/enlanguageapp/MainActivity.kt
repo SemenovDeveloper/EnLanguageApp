@@ -1,8 +1,6 @@
 package com.example.enlanguageapp
 
-import android.graphics.Color
 import android.os.Bundle
-import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -27,8 +25,55 @@ class MainActivity : AppCompatActivity() {
         // корректный
         // некорректный
 
+        binding.layoutAnswer3.setOnClickListener {
+            markAnswerCurrent()
+        }
 
 
 
+    }
+
+    private fun markAnswerCurrent() {
+        binding.layoutAnswer3.background = ContextCompat.getDrawable(
+            this@MainActivity,
+            R.drawable.shape_rounded_containers_correct
+        )
+
+        binding.tvVariantNumber3.background = ContextCompat.getDrawable(
+            this@MainActivity,
+            R.drawable.shape_rounded_elements_correct
+        )
+
+        binding.tvVariantValue3.setTextColor(ContextCompat.getColor(
+            this@MainActivity,
+            R.color.surfaceGreen
+        ))
+
+        binding.tvVariantNumber3.setTextColor(ContextCompat.getColor(
+            this@MainActivity,
+            R.color.white
+        ))
+
+        binding.btnSkip.isVisible = false
+
+        binding.layoutResult.setBackgroundColor(
+            ContextCompat.getColor(
+                this@MainActivity,
+                R.color.surfaceGreen
+            )
+        )
+
+        binding.imageView.setImageDrawable(
+            ContextCompat.getDrawable(
+                this@MainActivity,
+                R.drawable.ic_correct
+            )
+        )
+
+        binding.tvResult.text = resources.getString(R.string.title_correct)
+
+        binding.btnContinue.setTextColor(ContextCompat.getColor(this@MainActivity, R.color.surfaceGreen))
+
+        binding.layoutResult.isVisible = true
     }
 }
