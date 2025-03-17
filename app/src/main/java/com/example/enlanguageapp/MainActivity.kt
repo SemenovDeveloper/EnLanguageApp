@@ -29,8 +29,97 @@ class MainActivity : AppCompatActivity() {
             markAnswerCurrent()
         }
 
+        binding.layoutAnswer1.setOnClickListener {
+            markAnswerIncorrect()
+        }
+
+        binding.btnContinue.setOnClickListener {
+            markAnswerNeutral()
+        }
 
 
+
+    }
+
+    private fun markAnswerNeutral() {
+        with(binding) {
+            for (layout in listOf(layoutAnswer1, layoutAnswer3)) {
+                layout.background = ContextCompat.getDrawable(
+                    this@MainActivity,
+                    R.drawable.shape_round_container
+                )
+
+                for(textView in listOf(tvVariantNumber1, tvVariantNumber3)) {
+                    textView.apply {
+                        background = ContextCompat.getDrawable(
+                            this@MainActivity,
+                            R.drawable.shape_round_elements
+                        )
+                        setTextColor(ContextCompat.getColor(
+                            this@MainActivity,
+                            R.color.textVariantsColor
+                        ))
+
+                    }
+                }
+
+                for(textView in listOf(tvVariantValue1, tvVariantValue3)) {
+                    textView.setTextColor(ContextCompat.getColor(
+                        this@MainActivity,
+                        R.color.textVariantsColor
+                    ))
+                }
+
+                layoutResult.isVisible = false
+
+                btnSkip.isVisible = true
+
+            }
+        }
+    }
+
+    private fun markAnswerIncorrect() {
+        binding.layoutAnswer1.background = ContextCompat.getDrawable(
+            this@MainActivity,
+            R.drawable.shape_rounded_containers_incorrect
+        )
+
+        binding.tvVariantNumber1.background = ContextCompat.getDrawable(
+            this@MainActivity,
+            R.drawable.shape_rounded_elements_incorrect
+        )
+
+        binding.tvVariantValue1.setTextColor(ContextCompat.getColor(
+            this@MainActivity,
+            R.color.surfaceRed
+        ))
+
+        binding.tvVariantNumber1.setTextColor(ContextCompat.getColor(
+            this@MainActivity,
+            R.color.white
+        ))
+
+        binding.btnSkip.isVisible = false
+
+        binding.layoutResult.setBackgroundColor(
+            ContextCompat.getColor(
+                this@MainActivity,
+                R.color.surfaceRed
+            )
+        )
+
+        binding.imageView.setImageDrawable(
+            ContextCompat.getDrawable(
+                this@MainActivity,
+                R.drawable.ic_wrong
+            )
+        )
+
+        binding.tvResult.text = resources.getString(R.string.title_incorrect)
+
+        binding.btnContinue.setTextColor(ContextCompat.getColor(this@MainActivity, R.color.surfaceRed))
+
+        binding.layoutResult.isVisible = true
     }
 
     private fun markAnswerCurrent() {
