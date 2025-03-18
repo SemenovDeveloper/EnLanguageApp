@@ -44,6 +44,15 @@ class MainActivity : AppCompatActivity() {
 
             val question = trainer.getNextQuestion()
 
+            if (question === null || question.variants.size < NUMBER_OF_ANSWERS) {
+                with (binding) {
+                    tvQuestionWord.isVisible = false
+                    layoutAnswers.isVisible = false
+                    btnSkip.isVisible = false
+                }
+                return
+            }
+
 
             binding.tvQuestionWord.text = question?.correctAnswer?.original
 
